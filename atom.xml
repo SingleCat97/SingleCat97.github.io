@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www,singlecat.me/"/>
-  <updated>2019-04-17T13:45:15.731Z</updated>
+  <updated>2019-04-20T14:46:07.834Z</updated>
   <id>www,singlecat.me/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JAVA基础</title>
+    <link href="www,singlecat.me/2019/04/20/JAVA%E5%9F%BA%E7%A1%80/"/>
+    <id>www,singlecat.me/2019/04/20/JAVA基础/</id>
+    <published>2019-04-20T14:46:07.000Z</published>
+    <updated>2019-04-20T14:46:07.834Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>博客</title>
