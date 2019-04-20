@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff4d06;
+  background: #ff01ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2992,12 +2992,14 @@ pre .javascript .function {
   }
 }
 body {
-  background: url("/images/DesktopBackground.png");
+  background: url("http://i1.bvimg.com/684391/2764133fa27fee3a.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 45% 10%;
 }
 .main-inner {
-  opacity: 0.9;
-  min-height: 500px;
+  opacity: 0.75;
+}
+.header {
+  opacity: 0.75;
 }
