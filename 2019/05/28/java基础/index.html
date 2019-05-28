@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="SingleCat个人博客" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="java入门">
+<meta name="keywords" content="java，web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA基础">
+<meta property="og:url" content="www,singlecat.me/2019/05/28/java基础/index.html">
+<meta property="og:site_name" content="SingleCat个人博客">
+<meta property="og:description" content="java入门">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-28T13:03:42.812Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVA基础">
+<meta name="twitter:description" content="java入门">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="www,singlecat.me/2019/05/28/java基础/">
+
+
+
+
+
+  <title>JAVA基础 | SingleCat个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">SingleCat个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">菜鸟的java学习之路</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www,singlecat.me/2019/05/28/java基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SingleCat">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/cat.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SingleCat个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JAVA基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T21:02:10+08:00">
+                2019-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>java入门<br><a id="more"></a></p>
+<h3 id="1、java基础"><a href="#1、java基础" class="headerlink" title="1、java基础"></a>1、java基础</h3><h4 id="a、基本概念"><a href="#a、基本概念" class="headerlink" title="a、基本概念"></a>a、基本概念</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">标识符</span><br><span class="line">	Java所有的组成部分都需要名字。类名、变量名以及方法名都被称为标识符。</span><br><span class="line">	标识符命名规则:</span><br><span class="line">		1. 标识符可以包含 英文字母 26个(区分大小写) 、 0 -9数字 、 $ （美元符号） 和 			_（下划线） 。</span><br><span class="line">     	2. 标识符不能以数字开头。</span><br><span class="line">     	3. 标识符不能是关键字。</span><br><span class="line"></span><br><span class="line">	标识符命名规范:</span><br><span class="line">        1. 类名规范：首字母大写，后面每个单词首字母大写（大驼峰式）。</span><br><span class="line">        2. 方法名规范： 首字母小写，后面每个单词首字母大写（小驼峰式）。</span><br><span class="line">        3. 变量名规范：首字母小写，后面每个单词首字母大写（小驼峰式）。</span><br><span class="line">        </span><br><span class="line">     合法标识符举例：age、$salary、_value、__1_value</span><br><span class="line">     </span><br><span class="line">	 非法标识符举例：123abc、-salary</span><br><span class="line">        </span><br><span class="line">关键字</span><br><span class="line">	关键字（或者保留字）是对编译器有特殊意义的固定单词，不能在程序中做其他目的使用。关键字具有专门的意义和用途，和自定义的标识符不同，不能当作一般的标识符来使用。</span><br><span class="line">	51 个关键字:</span><br><span class="line">        1. 数据类型：boolean、int、long、short、byte、float、double、char、class、				  interface。</span><br><span class="line">        2. 流程控制：if、else、do、while、for、switch、case、default、break、                           continue、return、try、catch、finally。</span><br><span class="line">        3. 修饰符：public、protected、private、final、void、static、strict、                          abstract、transient、synchronized、volatile、native。</span><br><span class="line">        4. 动作：package、import、throw、throws、extends、implements、this、                        supper、instanceof、new。</span><br><span class="line">        5. 保留字：true、false、null、goto、const。</span><br><span class="line"></span><br><span class="line">注释</span><br><span class="line">	注释是对程序语言的说明，有助于开发者和用户之间的交流，方便理解程序。注释不是编程语句，因此被编译器忽略。</span><br><span class="line"></span><br><span class="line">	常用注释</span><br><span class="line">        1. 单行注释以 // 开头  换行结束</span><br><span class="line">        2. 多行注释以 /* 开头  以*/结束</span><br><span class="line">        3. 文档注释以/*开头   以/结束</span><br><span class="line">枚举</span><br><span class="line">	概念</span><br><span class="line">		枚举限制变量只能是预先设定好的值。</span><br><span class="line">	注意点</span><br><span class="line">		枚举可以单独声明或者声明在类里面。</span><br><span class="line">		方法、变量、构造函数也可以在枚举中定义。</span><br><span class="line"></span><br><span class="line">数组</span><br><span class="line">	数组是储存在堆上的对象，可以保存多个同类型变量。</span><br><span class="line"></span><br><span class="line">对象</span><br><span class="line">	对象是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。</span><br><span class="line">	</span><br><span class="line">类</span><br><span class="line">	类是一个模板，它描述一类对象的行为和状态。</span><br><span class="line">	</span><br><span class="line">方法</span><br><span class="line">	方法就是行为，一个类可以有很多方法。逻辑运算、数据修改以及所有动作都是在方法中完成的。</span><br><span class="line">	定义方法的格式详解</span><br><span class="line">		修饰符 返回值类型 方法名(参数列表)&#123;</span><br><span class="line">              //代码省略...</span><br><span class="line">              return 结果;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	定义方法的两个明确</span><br><span class="line">		明确返回值类型 </span><br><span class="line">		明确参数列表</span><br><span class="line">	</span><br><span class="line">	 定义方法的注意事项</span><br><span class="line">	 	定义位置，类中方法外面。</span><br><span class="line">		返回值类型，必须要和 return 语句返回的类型相同，否则编译失败 。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">      方法重载 ：指在同一个类中，允许存在一个以上的同名方法，只要它们的参数列表不同即					可，与修饰符和返回值类型无关。</span><br><span class="line">      参数列表：个数不同，数据类型不同，顺序不同。</span><br><span class="line">      重载方法调用： JVM通过方法的参数列表，调用不同的方法</span><br><span class="line">      </span><br><span class="line">实例变量</span><br><span class="line">	每个对象都有独特的实例变量，对象的状态由这些实例变量的值决定。</span><br></pre></td></tr></table></figure>
+<h4 id="b、基本语法"><a href="#b、基本语法" class="headerlink" title="b、基本语法"></a>b、基本语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">大小写敏感</span><br><span class="line">	Java是大小写敏感的，这就意味着标识符Hello与hello是不同的。</span><br><span class="line">	</span><br><span class="line">类名</span><br><span class="line">	对于所有的类来说，类名的首字母应该大写。如果类名由若干单词组成，那么每个单词的首字母应该大写，例如 MyFirstJavaClass 。</span><br><span class="line">	</span><br><span class="line">方法名</span><br><span class="line">	所有的方法名都应该以小写字母开头。如果方法名含有若干单词，则后面的每个单词首字母大写。</span><br><span class="line">	</span><br><span class="line">源文件名</span><br><span class="line">	源文件名必须和类名相同。当保存文件的时候，你应该使用类名作为文件名保存（切记Java是大小写敏感的），文件名的后缀为.java。。</span><br><span class="line">	</span><br><span class="line">主方法入口</span><br><span class="line">	所有的Java 程序由public static void main(String []args)方法开始执行。</span><br></pre></td></tr></table></figure>
+<h3 id="2、java数据类型"><a href="#2、java数据类型" class="headerlink" title="2、java数据类型"></a>2、java数据类型</h3><h4 id="a、数据类型分类"><a href="#a、数据类型分类" class="headerlink" title="a、数据类型分类"></a>a、数据类型分类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">基本数据类型 ：包括 整数 、 浮点数 、 字符 、 布尔 。</span><br><span class="line"></span><br><span class="line">引用数据类型 ：包括 类 、 数组 、 接口 。</span><br></pre></td></tr></table></figure>
+<h4 id="b、基本数据类型"><a href="#b、基本数据类型" class="headerlink" title="b、基本数据类型"></a>b、基本数据类型</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">概述</span><br><span class="line">	Java语言提供了八种基本类型。六种数字类型（四个整数型，两个浮点型），一种字符类型，还有一种布尔型。</span><br><span class="line">	</span><br><span class="line">类型</span><br><span class="line">	byte</span><br><span class="line">		byte数据类型是8位、有符号的，以二进制补码表示的整数</span><br><span class="line">		最小值是-128（-2^7）</span><br><span class="line">		最大值是127（2^7-1）</span><br><span class="line">		默认值是0</span><br><span class="line">		byte类型用在大型数组中节约空间，主要代替整数，因为byte变量占用的空间只有int类型的四分之一</span><br><span class="line">		例子：byte a = 100，byte b = -50</span><br><span class="line">		</span><br><span class="line">	short</span><br><span class="line">		short数据类型是16位、有符号的以二进制补码表示的整数</span><br><span class="line">		最小值是-32768（-2^15）；</span><br><span class="line">		最大值是32767（2^15 - 1）；</span><br><span class="line">		Short数据类型也可以像byte那样节省空间。一个short变量是int型变量所占空间的二分之一；</span><br><span class="line">		默认值是0；</span><br><span class="line">		例子：short s = 1000，short r = -20000。</span><br><span class="line">		</span><br><span class="line">	int</span><br><span class="line">		int数据类型是32位、有符号的以二进制补码表示的整数；</span><br><span class="line">		最小值是-2,147,483,648（-2^31）；</span><br><span class="line">		最大值是2,147,483,647（2^31 - 1）；</span><br><span class="line">		一般地整型变量默认为int类型；</span><br><span class="line">		默认值是0；</span><br><span class="line">		例子：int a = 100000, int b = -200000。</span><br><span class="line">		</span><br><span class="line">	long</span><br><span class="line">		long数据类型是64位、有符号的以二进制补码表示的整数；</span><br><span class="line">		最小值是-9,223,372,036,854,775,808（-2^63）；</span><br><span class="line">		最大值是9,223,372,036,854,775,807（2^63 -1）；</span><br><span class="line">		这种类型主要使用在需要比较大整数的系统上；</span><br><span class="line">		默认值是0L；</span><br><span class="line">		例子： long a = 100000L，Long b = -200000L。</span><br><span class="line">		</span><br><span class="line">	float</span><br><span class="line">		float数据类型是单精度、32位、符合IEEE 754标准的浮点数；</span><br><span class="line">		float在储存大型浮点数组的时候可节省内存空间；</span><br><span class="line">		默认值是0.0f；</span><br><span class="line">		浮点数不能用来表示精确的值，如货币；</span><br><span class="line">		例子：float f1 = 234.5f。</span><br><span class="line">		</span><br><span class="line">	double</span><br><span class="line">		double数据类型是双精度、64位、符合IEEE 754标准的浮点数；</span><br><span class="line">		浮点数的默认类型为double类型；</span><br><span class="line">		double类型同样不能表示精确的值，如货币；</span><br><span class="line">		默认值是0.0d；</span><br><span class="line">		例子：double d1 = 123.4。</span><br><span class="line">		</span><br><span class="line">	boolean</span><br><span class="line">		boolean数据类型表示一位的信息；</span><br><span class="line">		只有两个取值：true和false；</span><br><span class="line">		这种类型只作为一种标志来记录true/false情况；</span><br><span class="line">		默认值是false；</span><br><span class="line">		例子：boolean one = true。</span><br><span class="line">		</span><br><span class="line">	char</span><br><span class="line">		char类型是一个单一的16位Unicode字符；</span><br><span class="line">		最小值是’\u0000’（即为0）；</span><br><span class="line">		最大值是’\uffff’（即为65,535）；</span><br><span class="line">		char数据类型可以储存任何字符；</span><br><span class="line">		例子：char letter = ‘A’。</span><br></pre></td></tr></table></figure>
+<h4 id="c、引用数据类型"><a href="#c、引用数据类型" class="headerlink" title="c、引用数据类型"></a>c、引用数据类型</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在Java中，引用类型的变量非常类似于C/C++的指针。引用类型指向一个对象，指向对象的变量是引用变量。这些变量在声明时被指定为一个特定的类型，比如Employee、Pubby等。变量一旦声明后，类型就不能被改变了。</span><br><span class="line">	对象、数组都是引用数据类型。</span><br><span class="line">	所有引用类型的默认值都是null。</span><br><span class="line">	一个引用变量可以用来引用与任何与之兼容的类型。</span><br><span class="line">    例子：Site site = new Site(&quot;Runoob&quot;)。</span><br></pre></td></tr></table></figure>
+<h4 id="d、数据类型转换"><a href="#d、数据类型转换" class="headerlink" title="d、数据类型转换"></a>d、数据类型转换</h4><h5 id="1）自动类型转换"><a href="#1）自动类型转换" class="headerlink" title="1）自动类型转换"></a>1）自动类型转换</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">低  ------------------------------------&gt;  高</span><br><span class="line">byte,short,char—&gt; int —&gt; long—&gt; float —&gt; double </span><br><span class="line">整型、实型（常量）、字符型数据可以混合运算。运算中，不同类型的数据先转化为同一类型，然后进行运算。</span><br><span class="line">规则</span><br><span class="line">	1. 不能对boolean类型进行类型转换。</span><br><span class="line">	2. 不能把对象类型转换成不相关类的对象。</span><br><span class="line">	3. 在把容量大的类型转换为容量小的类型时必须使用强制类型转换。</span><br><span class="line">	4. 转换过程中可能导致溢出或损失精度</span><br><span class="line">		int i =128;   </span><br><span class="line">		byte b = (byte)i;</span><br><span class="line">		因为byte类型时8位，最大值为127，所以当强制转换为int类型值128时候就会导致溢出。	  5. 浮点数到整数的转换是通过舍弃小数得到，而不是四舍五入</span><br><span class="line">	6. 必须满足转换前的数据类型的位数要低于转换后的数据类型</span><br></pre></td></tr></table></figure>
+<h5 id="2）强制类型转换"><a href="#2）强制类型转换" class="headerlink" title="2）强制类型转换"></a>2）强制类型转换</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 条件是转换的数据类型必须是兼容的。</span><br><span class="line">2. 格式：(type)value type是要强制类型转换后的数据类型</span><br></pre></td></tr></table></figure>
+<h5 id="3）隐含强制类型转换"><a href="#3）隐含强制类型转换" class="headerlink" title="3）隐含强制类型转换"></a>3）隐含强制类型转换</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 整数的默认类型是 int。</span><br><span class="line">2. 浮点型不存在这种情况，因为在定义 float 类型时必须在数字后面跟上 F 或者 f。</span><br></pre></td></tr></table></figure>
+<h3 id="3、Java常量"><a href="#3、Java常量" class="headerlink" title="3、Java常量"></a>3、Java常量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">常量在程序运行时，不会被修改的量</span><br><span class="line">在 Java 中使用 final 关键字来修饰常量，声明方式和变量类似</span><br><span class="line">例子：</span><br><span class="line">	final double PI = 3.1415927;</span><br><span class="line">为了便于识别，通常使用大写字母表示常量</span><br><span class="line">当使用常量的时候，前缀0表示8进制，而前缀0x代表16进制，</span><br><span class="line">如：</span><br><span class="line">	int hexa =  0x64;</span><br><span class="line">字符串常量和字符常量都可以包含任何Unicode字符，</span><br><span class="line">如：</span><br><span class="line">	char a = &apos;\u0001&apos;;</span><br><span class="line">	</span><br><span class="line">特殊的转义字符序列</span><br><span class="line">	符号	字符含义</span><br><span class="line">	\n		换行 (0x0a)</span><br><span class="line">	\r		回车 (0x0d)</span><br><span class="line">	\f		换页符(0x0c)</span><br><span class="line">	\b		退格 (0x08)</span><br><span class="line">	\s		空格 (0x20)</span><br><span class="line">	\t		制表符</span><br><span class="line">	\&quot;		双引号</span><br><span class="line">	\\		反斜杠</span><br><span class="line">	\&apos;		单引号</span><br><span class="line">	\ddd	八进制字符 (ddd)</span><br><span class="line">	\uxxxx	16进制Unicode字符 (xxxx)</span><br></pre></td></tr></table></figure>
+<h3 id="4、java变量"><a href="#4、java变量" class="headerlink" title="4、java变量"></a>4、java变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">变量就是申请内存来存储值，当创建变量的时候，需要在内存中申请空间</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">内存管理系统根据变量的类型为变量分配存储空间，分配的空间只能用来储存该类型数据。</span><br></pre></td></tr></table></figure>
+<h4 id="变量分类"><a href="#变量分类" class="headerlink" title="变量分类"></a>变量分类</h4><h5 id="1-局部变量"><a href="#1-局部变量" class="headerlink" title="1)局部变量"></a>1)局部变量</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1、局部变量声明在方法、构造方法或者语句块中；</span><br><span class="line">2、局部变量在方法、构造方法、或者语句块被执行的时候创建，当它们执行完成后，变量将会被销毁；</span><br><span class="line">3、访问修饰符不能用于局部变量；</span><br><span class="line">4、局部变量只在声明它的方法、构造方法或者语句块中可见；</span><br><span class="line">5、局部变量是在栈上分配的。</span><br><span class="line">6、局部变量没有默认值，所以局部变量被声明后，必须经过初始化，才可以使用。</span><br></pre></td></tr></table></figure>
+<h5 id="2-实例变量"><a href="#2-实例变量" class="headerlink" title="2)实例变量"></a>2)实例变量</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1、实例变量声明在一个类中，但在方法、构造方法和语句块之外；</span><br><span class="line">2、当一个对象被实例化之后，每个实例变量的值就跟着确定；</span><br><span class="line">3、实例变量在对象创建的时候创建，在对象被销毁的时候销毁；</span><br><span class="line">4、实例变量的值应该至少被一个方法、构造方法或者语句块引用，使得外部能够通过这些方式获取实例变量信息；</span><br><span class="line">5、实例变量可以声明在使用前或者使用后；</span><br><span class="line">6、访问修饰符可以修饰实例变量；</span><br><span class="line">7、实例变量对于类中的方法、构造方法或者语句块是可见的。一般情况下应该把实例变量设为私有。8、通过使用访问修饰符可以使实例变量对子类可见；</span><br><span class="line">9、实例变量具有默认值。数值型变量的默认值是0，布尔型变量的默认值是false，引用类型变量的默认值是null。变量的值可以在声明时指定，也可以在构造方法中指定；</span><br><span class="line">10、实例变量可以直接通过变量名访问。但在静态方法以及其他类中，就应该使用完全限定名：ObejectReference.VariableName。</span><br></pre></td></tr></table></figure>
+<h5 id="3-类变量（静态变量）"><a href="#3-类变量（静态变量）" class="headerlink" title="3)类变量（静态变量）"></a>3)类变量（静态变量）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1、类变量也称为静态变量，在类中以static关键字声明，但必须在方法构造方法和语句块之外。</span><br><span class="line">2、无论一个类创建了多少个对象，类只拥有类变量的一份拷贝。</span><br><span class="line">3、静态变量除了被声明为常量外很少使用。常量是指声明为public/private，final和static类型的变量。常量初始化后不可改变。</span><br><span class="line">4、静态变量储存在静态存储区。经常被声明为常量，很少单独使用static声明变量。</span><br><span class="line">5、静态变量在程序开始时创建，在程序结束时销毁。</span><br><span class="line">6、与实例变量具有相似的可见性。但为了对类的使用者可见，大多数静态变量声明为public类型。</span><br><span class="line">7、默认值和实例变量相似。数值型变量默认值是0，布尔型默认值是false，引用类型默认值是null。变量的值可以在声明的时候指定，也可以在构造方法中指定。此外，静态变量还可以在静态语句块中初始化。</span><br><span class="line">8、静态变量可以通过：ClassName.VariableName的方式访问。</span><br><span class="line">9、类变量被声明为public static final类型时，类变量名称一般建议使用大写字母。如果静态变量不是public和final类型，其命名方式与实例变量以及局部变量的命名方式一致。</span><br></pre></td></tr></table></figure>
+<h5 id="4-静态变量和实例变量的区别"><a href="#4-静态变量和实例变量的区别" class="headerlink" title="4)_静态变量和实例变量的区别"></a>4)_静态变量和实例变量的区别</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">实例变量属于某个对象的属性，必须创建了实例对象，其中的实例变量才会被分配空间，才能使用这个实例变量。</span><br><span class="line"></span><br><span class="line">静态变量不属于某个实例对象，而是属于类，所以也称为类变量，只要程序加载了类的字节码，不用创建任何实例对象，静态变量就会被分配空间，静态变量就可以被使用了</span><br></pre></td></tr></table></figure>
+<h3 id="5、java运算符"><a href="#5、java运算符" class="headerlink" title="5、java运算符"></a>5、java运算符</h3><h5 id="a、常用运算符"><a href="#a、常用运算符" class="headerlink" title="a、常用运算符"></a>a、常用运算符</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">算术运算符</span><br><span class="line">	+	加法 - 相加运算符两侧的值	A + B 等于 30</span><br><span class="line">	-	减法 - 左操作数减去右操作数	A – B 等于 -10</span><br><span class="line">	*	乘法 - 相乘操作符两侧的值	A * B等于200</span><br><span class="line">	/	除法 - 左操作数除以右操作数	B / A等于2</span><br><span class="line">	％	取模 - 左操作数除右操作数的余数	B%A等于0</span><br><span class="line">	++	自增: 操作数的值增加1	B++ 或 ++B 等于 21（区别详见下文）</span><br><span class="line">	--	自减: 操作数的值减少1	B-- 或 --B 等于 19（区别详见下文）</span><br><span class="line">	自增自减运算符</span><br><span class="line">		自增（++）自减（--）运算符是一种特殊的算术运算符，在算术运算符中需要两个操作数来进行运算，而自增自减运算符是一个操作数</span><br><span class="line">		（i ++）表示运算完成之后增1，（++ i）表示增1之后再运算</span><br><span class="line">		</span><br><span class="line">关系运算符</span><br><span class="line">	==	检查如果两个操作数的值是否相等，如果相等则条件为真。	</span><br><span class="line">		（A == B）为假(非真)。</span><br><span class="line">		</span><br><span class="line">	!=	检查如果两个操作数的值是否相等，如果值不相等则条件为真。	</span><br><span class="line">		(A != B) 为真。</span><br><span class="line">		</span><br><span class="line">	&gt; 	检查左操作数的值是否大于右操作数的值，如果是那么条件为真。	</span><br><span class="line">		（A&gt; B）非真。</span><br><span class="line">		</span><br><span class="line">	&lt; 	检查左操作数的值是否小于右操作数的值，如果是那么条件为真。	</span><br><span class="line">		（A &lt;B）为真。</span><br><span class="line">		</span><br><span class="line">	&gt; =	检查左操作数的值是否大于或等于右操作数的值，如果是那么条件为真。</span><br><span class="line">		（A&gt; = B）为假。</span><br><span class="line">		</span><br><span class="line">	&lt;=	检查左操作数的值是否小于或等于右操作数的值，如果是那么条件为真。	</span><br><span class="line">		（A &lt;= B）为真。</span><br><span class="line">		</span><br><span class="line">位运算符</span><br><span class="line">	Java定义了位运算符，应用于整数类型(int)，长整型(long)，短整型(short)，字符型(char)，和字节型(byte)等类型。位运算符作用在所有的位上，并且按位运算</span><br><span class="line">	＆	如果相对应位都是1，则结果为1，否则为0	</span><br><span class="line">		（A＆B），得到12，即0000 1100</span><br><span class="line">		</span><br><span class="line">	|	如果相对应位都是0，则结果为0，否则为1	</span><br><span class="line">		（A | B）得到61，即 0011 1101</span><br><span class="line">		</span><br><span class="line">	^	如果相对应位值相同，则结果为0，否则为1	</span><br><span class="line">		（A ^ B）得到49，即 0011 0001</span><br><span class="line">		</span><br><span class="line">	〜	按位补运算符翻转操作数的每一位，即0变成1，1变成0。	</span><br><span class="line">		（〜A）得到-61，即1100 0011</span><br><span class="line">		</span><br><span class="line">	&lt;&lt; 	按位左移运算符。左操作数按位左移右操作数指定的位数。	</span><br><span class="line">		 A &lt;&lt; 2得到240，即 1111 0000</span><br><span class="line">		</span><br><span class="line">	&gt;&gt; 	按位右移运算符。左操作数按位右移右操作数指定的位数。</span><br><span class="line">    	 A &gt;&gt; 2得到15即 1111</span><br><span class="line">    	 </span><br><span class="line">	&gt;&gt;&gt; 	按位右移补零操作符。左操作数的值按右操作数指定的位数右移，移动得到的空位以零填充。	</span><br><span class="line">		 A&gt;&gt;&gt;2得到15即0000 1111</span><br><span class="line">		 </span><br><span class="line">逻辑运算符</span><br><span class="line">	&amp;&amp;	称为逻辑与运算符。当且仅当两个操作数都为真，条件才为真。	（</span><br><span class="line">		A &amp;&amp; B）为假。</span><br><span class="line">		</span><br><span class="line">	| |	称为逻辑或操作符。如果任何两个操作数任何一个为真，条件为真。	</span><br><span class="line">		（A | | B）为真。</span><br><span class="line">		</span><br><span class="line">	！	称为逻辑非运算符。用来反转操作数的逻辑状态。如果条件为true，则逻辑非运算符将得到false。	</span><br><span class="line">		！（A &amp;&amp; B）为真。</span><br><span class="line">		</span><br><span class="line">	当使用与逻辑运算符时，在两个操作数都为true时，结果才为true，但是当得到第一个操作为false时，其结果就必定是false，这时候就不会再判断第二个操作了。</span><br><span class="line">	</span><br><span class="line">赋值运算符 </span><br><span class="line">	=    简单的赋值运算符，将右操作数的值赋给左侧操作数 </span><br><span class="line">		 C = A + B将把A + B得到的值赋给C</span><br><span class="line">	</span><br><span class="line">	+ =  加和赋值操作符，它把左操作数和右操作数相加赋值给左操作数   </span><br><span class="line">    	 C + = A等价于C = C + A</span><br><span class="line">    	 </span><br><span class="line">    - =  减和赋值操作符，它把左操作数和右操作数相减赋值给左操作数    </span><br><span class="line">    	 C - = A等价于C = C - A</span><br><span class="line">    	 </span><br><span class="line">    * =  乘和赋值操作符，它把左操作数和右操作数相乘赋值给左操作数    </span><br><span class="line">    	 C * = A等价于C = C * A</span><br><span class="line">    	 </span><br><span class="line">    / =  除和赋值操作符，它把左操作数和右操作数相除赋值给左操作数    </span><br><span class="line">     	 C / = A等价于C = C / A</span><br><span class="line">     	 </span><br><span class="line">   ％ =  取模和赋值操作符，它把左操作数和右操作数取模后赋值给左操作数  </span><br><span class="line">   		 C％= A等价于C = C％A</span><br><span class="line">   		 </span><br><span class="line">   &lt;&lt; =  左移位赋值运算符    </span><br><span class="line">   		 C &lt;&lt; = 2等价于C = C &lt;&lt; 2</span><br><span class="line">   		 </span><br><span class="line">   &gt;&gt; =  右移位赋值运算符   </span><br><span class="line">   		 C &gt;&gt; = 2等价于C = C &gt;&gt; 2</span><br><span class="line">   		 </span><br><span class="line">   ＆ =  按位与赋值运算符    </span><br><span class="line">   		 C＆= 2等价于C = C＆2</span><br><span class="line">   		 </span><br><span class="line">   ^ =   按位异或赋值操作符   </span><br><span class="line">   		 C ^ = 2等价于C = C ^ 2</span><br><span class="line">   		 </span><br><span class="line">   | =   按位或赋值操作符    </span><br><span class="line">   		 C | = 2等价于C = C | 2</span><br><span class="line"></span><br><span class="line">其他运算符</span><br><span class="line">    条件运算符（?:）</span><br><span class="line">        条件运算符也被称为三元运算符。该运算符有3个操作数，并且需要判断布尔表达式的值。		该运算符的主要是决定哪个值应该赋值给变量</span><br><span class="line">        variable x = (expression) ? value if true : value if false</span><br><span class="line"></span><br><span class="line">    instanceof 运算符</span><br><span class="line">        该运算符用于操作对象实例，检查该对象是否是一个特定类型（类类型或接口类型）</span><br><span class="line">        ( Object reference variable ) instanceof  (class/interface type)</span><br></pre></td></tr></table></figure>
+<h5 id="b、Java运算符优先级"><a href="#b、Java运算符优先级" class="headerlink" title="b、Java运算符优先级"></a>b、Java运算符优先级</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">后缀	() [] . (点操作符)	左到右</span><br><span class="line">一元	+ + - ！〜	从右到左</span><br><span class="line">乘性 	* /％	左到右</span><br><span class="line">加性 	+ -	左到右</span><br><span class="line">移位 	&gt;&gt; &gt;&gt;&gt;  &lt;&lt; 	左到右</span><br><span class="line">关系 	&gt;&gt; = &lt;&lt; = 	左到右</span><br><span class="line">相等 	==  !=	左到右</span><br><span class="line">按位与	＆	左到右</span><br><span class="line">按位异或	^	左到右</span><br><span class="line">按位或	|	左到右</span><br><span class="line">逻辑与	&amp;&amp;	左到右</span><br><span class="line">逻辑或	| |	左到右</span><br><span class="line">条件	？：	从右到左</span><br><span class="line">赋值	= + = - = * = / =％= &gt;&gt; = &lt;&lt; =＆= ^ = | =	从右到左</span><br><span class="line">逗号	，	左到右</span><br></pre></td></tr></table></figure>
+<h3 id="6、java修饰符"><a href="#6、java修饰符" class="headerlink" title="6、java修饰符"></a>6、java修饰符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">概念</span><br><span class="line">	修饰符用来定义类、方法或者变量，通常放在语句的最前端。</span><br><span class="line"></span><br><span class="line">访问控制修饰符</span><br><span class="line">	Java中，可以使用访问控制符来保护对类、变量、方法和构造方法的访问。Java支持4种不同的	  访问权限</span><br><span class="line">	</span><br><span class="line">	访问控制</span><br><span class="line">		![avatar](https://s2.ax1x.com/2019/05/02/ENizy8.png)</span><br><span class="line">		</span><br><span class="line">	访问控制和继承</span><br><span class="line">		父类中声明为 public 的方法在子类中也必须为 public。</span><br><span class="line">		</span><br><span class="line">		父类中声明为 protected 的方法在子类中要么声明为 protected，要么声明为 				public，不能声明为 private。</span><br><span class="line">		</span><br><span class="line">		父类中声明为 private 的方法，不能够被继承。</span><br><span class="line">		</span><br><span class="line">非访问修饰符</span><br><span class="line">	static 修饰符，用来创建类方法和类变量。</span><br><span class="line">	</span><br><span class="line">	final 修饰符，用来修饰类、方法和变量，final 修饰的类不能够被继承，修饰的方法不能被	     继承类重新定义，修饰的变量为常量，是不可修改的。</span><br><span class="line">	</span><br><span class="line">	abstract 修饰符，用来创建抽象类和抽象方法。</span><br><span class="line">	</span><br><span class="line">	synchronized 和 volatile 修饰符，主要用于线程的编程。</span><br></pre></td></tr></table></figure>
+<h3 id="7、java流程控制语句"><a href="#7、java流程控制语句" class="headerlink" title="7、java流程控制语句"></a>7、java流程控制语句</h3><h5 id="a、java分支结构"><a href="#a、java分支结构" class="headerlink" title="a、java分支结构"></a>a、java分支结构</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">if 语句</span><br><span class="line">	if(布尔表达式)</span><br><span class="line">	&#123;</span><br><span class="line">  	 //如果布尔表达式为true将执行的语句</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	if 语句</span><br><span class="line">		一个 if 语句包含一个布尔表达式和一条或多条语句</span><br><span class="line">		</span><br><span class="line">	if...else语句</span><br><span class="line">		if 语句后面可以跟 else 语句，当 if 语句的布尔表达式值为 false 时，else 语句块会被执行</span><br><span class="line">		</span><br><span class="line">	if...else if...else 语句</span><br><span class="line">		if 语句至多有 1 个 else 语句，else 语句在所有的 elseif 语句之后。</span><br><span class="line">		if 语句可以有若干个 elseif 语句，它们必须在 else 语句之前。</span><br><span class="line">		一旦其中一个 else if 语句检测为 true，其他的 else if 以及 else 语句都将跳过执行。</span><br><span class="line">		</span><br><span class="line">	嵌套的 if…else 语句</span><br><span class="line">	</span><br><span class="line">switch 语句</span><br><span class="line">	switch 语句判断一个变量与一系列值中某个值是否相等，每个值称为一个分支</span><br><span class="line">	</span><br><span class="line">	switch 语句中的变量类型可以是： byte、short、int 或者 char。从 Java SE 7 开始，switch 支持字符串类型了，同时 case 标签必须为字符串常量或字面量。</span><br><span class="line">	</span><br><span class="line">	switch 语句可以拥有多个 case 语句。每个 case 后面跟一个要比较的值和冒号。</span><br><span class="line">	</span><br><span class="line">	case 语句中的值的数据类型必须与变量的数据类型相同，而且只能是常量或者字面常量。</span><br><span class="line">	</span><br><span class="line">	当变量的值与 case 语句的值相等时，那么 case 语句之后的语句开始执行，直到 break 语句出现才会跳出 switch 语句。</span><br><span class="line">	</span><br><span class="line">	当遇到 break 语句时，switch 语句终止。程序跳转到 switch 语句后面的语句执行。case 语句不必须要包含 break 语句。如果没有 break 语句出现，程序会继续执行下一条 case 语句，直到出现 break 语句。</span><br><span class="line">	</span><br><span class="line">	switch 语句可以包含一个 default 分支，该分支必须是 switch 语句的最后一个分支。default 在没有 case 语句的值和变量值相等的时候执行。default 分支不需要 break 语句。</span><br></pre></td></tr></table></figure>
+<h5 id="b、java循环结构"><a href="#b、java循环结构" class="headerlink" title="b、java循环结构"></a>b、java循环结构</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">while 循环</span><br><span class="line">	只要布尔表达式为 true，循环体会一直执行下去</span><br><span class="line">	while( 布尔表达式 ) &#123;</span><br><span class="line">	  //循环内容</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">do…while 循环</span><br><span class="line">	对于 while 语句而言，如果不满足条件，则不能进入循环。但有时候我们需要即使不满足条件，也至少执行一次</span><br><span class="line">	</span><br><span class="line">	do &#123;</span><br><span class="line">   	//代码语句</span><br><span class="line">   &#125;while(布尔表达式)</span><br><span class="line">   </span><br><span class="line">   区别</span><br><span class="line">	do…while 循环和 while 循环相似，不同的是，do…while 循环至少会执行一次。</span><br><span class="line">   </span><br><span class="line">for 循环</span><br><span class="line">	最先执行初始化步骤。可以声明一种类型，但可初始化一个或多个循环控制变量，也可以是空语句。</span><br><span class="line">	然后，检测布尔表达式的值。如果为 true，循环体被执行。如果为false，循环终止，开始执行循环体后面的语句。</span><br><span class="line">	执行一次循环后，更新循环控制变量。</span><br><span class="line">	再次检测布尔表达式。循环执行上面的过程。</span><br><span class="line">	</span><br><span class="line">	for(初始化; 布尔表达式; 更新) &#123;</span><br><span class="line">    	//代码语句</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">Java 增强 for 循环</span><br><span class="line"></span><br><span class="line">    for(声明语句 : 表达式)&#123;</span><br><span class="line">   		//代码句子</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	声明新的局部变量，该变量的类型必须和数组元素的类型匹配</span><br><span class="line">	其作用域限定在循环语句块，其值与此时数组元素的值相等。</span><br><span class="line">	</span><br><span class="line">break 关键字</span><br><span class="line">	break 主要用在循环语句或者 switch 语句中，用来跳出整个语句块。</span><br><span class="line">	break 跳出最里层的循环，并且继续执行该循环下面的语句。</span><br><span class="line">	</span><br><span class="line">continue 关键字</span><br><span class="line">	continue 适用于任何循环控制结构中。作用是让程序立刻跳转到下一次循环的迭代。</span><br><span class="line">	在 for 循环中，continue 语句使程序立即跳转到更新语句。</span><br><span class="line">	在 while 或者 do…while 循环中，程序立即跳转到布尔表达式的判断语句。</span><br></pre></td></tr></table></figure>
+<h3 id="8、java数组"><a href="#8、java数组" class="headerlink" title="8、java数组"></a>8、java数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">数组</span><br><span class="line">	数组是储存在堆上的对象，可以保存多个同类型变量。</span><br><span class="line"></span><br><span class="line">声明数组变量</span><br><span class="line">	dataType[] arrayRefVar;   // 首选的方法</span><br><span class="line">	dataType arrayRefVar[];  // 效果相同，但不是首选方法</span><br><span class="line">	</span><br><span class="line">创建数组</span><br><span class="line">	1、arrayRefVar = new dataType[arraySize];</span><br><span class="line">	2、arrayRefVar = new dataType[value0, value1, ..., valuek];</span><br><span class="line">	3、dataType[] arrayRefVar = &#123;value0, value1, ..., valuek&#125;;</span><br><span class="line">	数组索引从 0 开始，所以索引值从 0 到 arrayRefVar.length-1</span><br><span class="line">	</span><br><span class="line">处理数组</span><br><span class="line">	数组的元素类型和数组的大小都是确定的，使用基本循环或者 foreach 循环处理数组元素</span><br><span class="line">	double[] myList = &#123;1.9, 2.9, 3.4, 3.5&#125;;</span><br><span class="line">	</span><br><span class="line"> // 打印所有数组元素</span><br><span class="line">for (double element: myList) &#123;</span><br><span class="line">      System.out.println(element);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">数组作为方法参数传递，传递的参数是数组内存的地址。</span><br><span class="line">数组作为方法的返回值，返回的是数组的内存地址</span><br><span class="line">方法的参数为基本类型时,传递的是数据值</span><br><span class="line">方法的参数为引用类型时,传递的是地址值</span><br><span class="line"></span><br><span class="line">多维数组</span><br><span class="line">	多维数组的动态初始化（以二维数组为例）</span><br><span class="line">	type[ ][ ] arrayName = new typ[arraylenght1][arraylenght2];</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/28/JAVA面向对象/" rel="prev" title="JAVA面向对象">
+                JAVA面向对象 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/cat.jpg" alt="SingleCat">
+            
+              <p class="site-author-name" itemprop="name">SingleCat</p>
+              <p class="site-description motion-element" itemprop="description">java学习博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/SingleCat97" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+		
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=27594382&auto=1&height=66"></iframe>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、java基础"><span class="nav-number">1.</span> <span class="nav-text">1、java基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a、基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">a、基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b、基本语法"><span class="nav-number">1.2.</span> <span class="nav-text">b、基本语法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、java数据类型"><span class="nav-number">2.</span> <span class="nav-text">2、java数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a、数据类型分类"><span class="nav-number">2.1.</span> <span class="nav-text">a、数据类型分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b、基本数据类型"><span class="nav-number">2.2.</span> <span class="nav-text">b、基本数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c、引用数据类型"><span class="nav-number">2.3.</span> <span class="nav-text">c、引用数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d、数据类型转换"><span class="nav-number">2.4.</span> <span class="nav-text">d、数据类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1）自动类型转换"><span class="nav-number">2.4.1.</span> <span class="nav-text">1）自动类型转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2）强制类型转换"><span class="nav-number">2.4.2.</span> <span class="nav-text">2）强制类型转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3）隐含强制类型转换"><span class="nav-number">2.4.3.</span> <span class="nav-text">3）隐含强制类型转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、Java常量"><span class="nav-number">3.</span> <span class="nav-text">3、Java常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、java变量"><span class="nav-number">4.</span> <span class="nav-text">4、java变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量分类"><span class="nav-number">4.1.</span> <span class="nav-text">变量分类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-局部变量"><span class="nav-number">4.1.1.</span> <span class="nav-text">1)局部变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-实例变量"><span class="nav-number">4.1.2.</span> <span class="nav-text">2)实例变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-类变量（静态变量）"><span class="nav-number">4.1.3.</span> <span class="nav-text">3)类变量（静态变量）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-静态变量和实例变量的区别"><span class="nav-number">4.1.4.</span> <span class="nav-text">4)_静态变量和实例变量的区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、java运算符"><span class="nav-number">5.</span> <span class="nav-text">5、java运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#a、常用运算符"><span class="nav-number">5.0.1.</span> <span class="nav-text">a、常用运算符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#b、Java运算符优先级"><span class="nav-number">5.0.2.</span> <span class="nav-text">b、Java运算符优先级</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#6、java修饰符"><span class="nav-number">6.</span> <span class="nav-text">6、java修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、java流程控制语句"><span class="nav-number">7.</span> <span class="nav-text">7、java流程控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#a、java分支结构"><span class="nav-number">7.0.1.</span> <span class="nav-text">a、java分支结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#b、java循环结构"><span class="nav-number">7.0.2.</span> <span class="nav-text">b、java循环结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、java数组"><span class="nav-number">8.</span> <span class="nav-text">8、java数组</span></a></li></div>
+            
+
+          </div>
+		  
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SingleCat</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
